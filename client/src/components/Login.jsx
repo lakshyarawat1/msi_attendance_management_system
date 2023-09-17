@@ -2,9 +2,12 @@ import { useState } from "react";
 
 const Login = () => {
   const [sliding, setSliding] = useState(false);
+  const [isFaculty, setIsFaculty] = useState(false);
+
 
   const handleSlide = () => {
     setSliding(!sliding);
+    setIsFaculty(!isFaculty);
   };
 
   return (
@@ -24,7 +27,7 @@ const Login = () => {
             institution and making a positive impact.
           </h4>
           <br />
-          <p>Are you a faculty ? </p>
+          <p>Are you a {isFaculty ? "student" : "faculty"} ?  </p>
           <button
             onClick={handleSlide}
             className="border px-10 p-1 rounded-full my-3"
